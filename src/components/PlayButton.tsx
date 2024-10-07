@@ -1,5 +1,5 @@
-import { PauseIcon } from '@/components/PauseIcon';
-import { PlayIcon } from '@/components/PlayIcon';
+import { PauseIcon } from './PauseIcon';
+import { PlayIcon } from './PlayIcon';
 import { usePlaybackState } from "react-spotify-web-playback-sdk";
 
 export function PlayButton({player}: { player: Spotify.Player }) {

@@ -1,4 +1,4 @@
-import { ForwardIcon } from "@/components/ForwardIcon";
+import { ForwardIcon } from "./ForwardIcon";
 import Player = Spotify.Player;
 import { usePlaybackState } from "react-spotify-web-playback-sdk";
 

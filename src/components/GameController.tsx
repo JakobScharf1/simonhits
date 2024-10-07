@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { usePlayerDevice, useSpotifyPlayer } from "react-spotify-web-playback-sdk";
-import QRCodeScanner from "@/components/QRCodeScanner";
+import QRCodeScanner from "./QRCodeScanner";
 import Link from "next/link";
-import { PlayButton } from "@/components/PlayButton";
-import { ForwardButton } from "@/components/ForwardButton";
-import { RewindButton } from "@/components/RewindButton";
-import ProgressBar from "@/components/ProgressBar";
+import { PlayButton } from "./PlayButton";
+import { ForwardButton } from "./ForwardButton";
+import { RewindButton } from "./RewindButton";
+import ProgressBar from "./ProgressBar";
 import NoSleep from 'nosleep.js';
 
 type Props = {
@@ -58,29 +58,29 @@ export default function GameController({token}: Props) {
 
     return (
         <div
-            className="relative flex flex-col justify-around w-full min-h-screen bg-gradient-to-t from-purple-200 to-pink-200">
+            className="relative flex flex-col justify-around w-full min-h-screen bg-gradient-to-t bg-black">
             {showScanner && (
                 <>
-                    <h1 className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 text-3xl font-bold tracking-tight text-white xs:text-4xl sm:text-5xl lg:text-6xl mt-8 uppercase text-center drop-shadow-lg">
-                        Scan QR-Code
+                    <h1 className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 text-3xl font-bold tracking-tight text-black xs:text-4xl sm:text-5xl lg:text-6xl mt-8 uppercase text-center drop-shadow-lg">
+                        QR-Code scannen
                     </h1>
 
                     <QRCodeScanner handleSpotifyTrackId={handleQrResult}/>
 
                     <div className="fixed flex w-full mb-4 bottom-0 left-1/2 transform -translate-x-1/2 z-20 px-4">
                         <Link
-                            href="/"
+                            href="/public"
                             className="text-center w-full rounded-md bg-white bg-opacity-70 px-3.5 py-2.5 text-sm font-bold text-slate-900 shadow-sm ring-1 ring-inset ring-gray-200 hover:bg-opacity-10"
                         >
-                            Go back
+                            Zurück
                         </Link>
                     </div>
                 </>
             )}
             {!showScanner && (<>
                 <div className="flex flex-col w-full sm:w-2/5 py-24 px-4 mx-auto">
-                    <h1 className="w-full text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-12">
-                        <span className="text-indigo-500">Tune</span>Quest
+                    <h1 className="w-full text-center text-4xl font-bold tracking-tight sm:text-5xl mb-12">
+                        <span className="text-white">SimonHits</span>
                     </h1>
                     <div className="mb-8">
                         <ProgressBar/>
@@ -93,10 +93,10 @@ export default function GameController({token}: Props) {
                     </div>
                     <div className="mt-16 flex w-full">
                         <button
-                            className="w-full rounded-md bg-white bg-opacity-30 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-opacity-60"
+                            className="w-full rounded-md bg-white bg-opacity-30 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-opacity-60"
                             onClick={() => goToNext()}
                         >
-                            Scan Next Card
+                            Nächster Song
                         </button>
                     </div>
                 </div>

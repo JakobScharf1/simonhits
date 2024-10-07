@@ -1,5 +1,5 @@
 import Player = Spotify.Player;
-import { RewindIcon } from "@/components/RewindIcon";
+import { RewindIcon } from "./RewindIcon";
 import { usePlaybackState } from "react-spotify-web-playback-sdk";
 
 export function RewindButton({player, amount = 10,}: {
