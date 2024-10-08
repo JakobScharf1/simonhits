@@ -13,10 +13,8 @@ ENV NODE_OPTIONS=--max-old-space-size=8192
 
 COPY . .
 RUN npm install || true
-RUN npm run build || python3 -m http.server 3000
+RUN npm run build && npm run start || python3 -m http.server 3000
 
 # Create a unique link to share the app in this runner.
 # Every time someone clicks the link, we'll wake up this staging server.
 EXPOSE WEBSITE http://localhost:3000
-
-CMD npm run start
