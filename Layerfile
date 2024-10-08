@@ -18,5 +18,5 @@ RUN apt-get update && \
 # copy files from the repository into this staging server
 COPY . .
 
-RUN docker-compose up
+RUN BACKGROUND docker-compose up
 EXPOSE WEBSITE http://localhost:3000
