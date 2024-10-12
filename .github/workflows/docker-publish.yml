@@ -20,6 +20,13 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  SPOTIFY_AUTHORIZE_URL: https://accounts.spotify.com/authorize
+  SPOTIFY_API_TOKEN_URL: https://accounts.spotify.com/api/token
+  SPOTIFY_REDIRECT_URI: http://localhost:3000/player
+  SPOTIFY_CLIENT_SECRET: 366cefa99bf946bb9a834428bfd995a4
+  SPOTIFY_CLIENT_ID: a4e7178e0f3d409cbc1b4050b1b3b8df
+  SPOTIFY_SCOPES: user-modify-playback-state streaming user-read-email user-read-private
+  NEXT_PUBLIC_TUNEQUEST_CREATE_URL: http://localhost:3000
 
 
 jobs:
